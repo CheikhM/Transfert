@@ -16,6 +16,13 @@ class Customer extends Model
      */
     protected $table = 'customers';
 
+     /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = ['name', 'phone'];
+
     /**
      * retrieve all deposits of a given user.
      */

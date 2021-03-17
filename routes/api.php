@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\TransfertController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,6 +22,12 @@ use Illuminate\Support\Facades\Route;
 Route::post('/login', [AuthController::class, 'login']);
 
 Route::middleware(['auth:sanctum'])->group(function () {
-    Route::resource('customers', CustomerController::class);
-    Route::resource('transferts', CustomerController::class);
+    // Searching for customers using name and phone.
+    Route::get('customers/find', [CustomerController::class, 'find']);
+
+    Route::resources([
+        'customers' => CustomerController::class,
+        'transferts' => TransfertController::class,
+    ]);
+
 });
