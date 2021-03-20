@@ -15,9 +15,9 @@ class CreateWithdrawlsTable extends Migration
     {
         Schema::create('withdrawls', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('deposit_id');
+            $table->unsignedBigInteger('customer_id');
             $table->float('amount');
-            $table->foreign('deposit_id')->references('id')->on('deposits');
+            $table->foreign('customer_id')->references('id')->on('customers');
             $table->timestamps();
         });
     }

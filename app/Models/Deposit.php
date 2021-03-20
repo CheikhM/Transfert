@@ -19,14 +19,7 @@ class Deposit extends Model
     /**
      * Get the owner of a given deposit.
      */
-    public function cusomter(){
+    public function customer(){
         return $this->belongsTo(Customer::class);
-    }
-
-    /**
-     * Get all withdrawls of a given deposit.
-     */
-    public function withdrawls() {
-        return $this->hasMany(WithDrawl::class);
     }
 }

@@ -113,7 +113,7 @@ class CustomerController extends Controller
 
         if($validator->fails()) {
             // #TODO, being more specific
-            return response(['error' => 'Error in sened data']);
+            return response(['error' => 'Error in sended data']);
         }
         $validated = $validator->validated();
 

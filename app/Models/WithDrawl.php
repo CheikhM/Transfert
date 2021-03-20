@@ -16,7 +16,10 @@ class WithDrawl extends Model
      */
     protected $table = 'withdrawls';
 
-    public function deposit() {
-        return $this->belongsTo(Deposit::class);
+    /**
+     * Get the person behind a given withdrawl.
+    */
+    public function customer(){
+        return $this->belongsTo(Customer::class);
     }
 }

@@ -31,17 +31,24 @@ class Customer extends Model
     }
 
     /**
+     * Get all withdrawls of a given deposit.
+     */
+    public function withdrawls() {
+        return $this->hasMany(WithDrawl::class);
+    }
+
+    /**
      * retrieve all transferts of a given user.
      */
     public function transferts() {
         return $this->hasMany(Transfert::class);
     }
 
-     /**
-     * retrieve all history of deposits for a given user.
+    /**
+     * Get the balance of a given customer.
      */
-    public function depositsHistory() {
-        return $this->hasMany(DepositHistory::class);
+    public function balance() {
+        return $this->hasOne(Balance::class);
     }
 
 
