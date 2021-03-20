@@ -19,7 +19,7 @@ class TransfertResource extends JsonResource
             'amount' => $this->amount,
             'price' => $this->price,
             'customer' => new CustomerResource($this->customer),
-            'currency' => new CurrencyResource($this->currency),
+            'currency' => new CurrencyResource($this->money),
             'sender' => new UserResource($this->sender),
             'receiver' => new UserResource($this->receiver),
 

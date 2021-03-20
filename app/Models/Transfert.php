@@ -17,6 +17,13 @@ class Transfert extends Model
     protected $table = 'transferts';
 
     /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = ['amount', 'currency', 'customer_id', 'price'];
+
+    /**
      * Get the customer behind a given transfert.
      */
     public function customer() {
@@ -41,7 +48,7 @@ class Transfert extends Model
     /**
      * Get the currecy of a given transfert.
      */
-    public function currency() {
+    public function money() {
         return $this->hasOne(Currency::class, 'id', 'currency');
     }
 

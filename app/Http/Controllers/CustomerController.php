@@ -67,10 +67,9 @@ class CustomerController extends Controller
             // #TODO, being more specific
             return response(['error' => 'Error in sened data']);
         }
-        $validated = $validator->validated();
 
         try {
-            $customer = Customer::create($validated);
+            $customer = Customer::create($validator->validated());
             return new CustomerResource($customer);
 
         } catch(\Exception $ex) {
